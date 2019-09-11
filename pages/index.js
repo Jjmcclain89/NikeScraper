@@ -5,7 +5,6 @@ const home = () => {
 	return (
 		<Page>
             <Data />
-			<p>Hey</p>
 		</Page>
 	);
 };
