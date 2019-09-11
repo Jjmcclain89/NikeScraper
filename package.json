@@ -1,18 +1,21 @@
 {
-  "name": "nike-scrapper",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "next dev",
-    "start": "next"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "next": "^9.0.5",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
-  }
+	"name": "nike-scranpm per",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "next",
+		"build": "next build",
+		"start": "next start -p $PORT",
+		"heroku-postbuild": "npm run build",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"next": "^9.0.5",
+		"react": "^16.9.0",
+		"react-dom": "^16.9.0"
+	}
 }
