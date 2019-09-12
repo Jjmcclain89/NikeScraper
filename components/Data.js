@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
-import GridLoader from '@bit/davidhu2000.react-spinners.grid-loader';
+// import GridLoader from '@bit/davidhu2000.react-spinners.grid-loader';
 import { ShoeContext } from './ShoeContext';
 import Shoe from './Shoe';
 
@@ -24,7 +24,7 @@ const Data = () => {
 				shoeData.map(shoe => <Shoe key={shoe.id} shoeInfo={shoe} />)
 			) : (
                 <LoaderContainer>
-                    <GridLoader size={100} color="#000" margin="10px" />
+                    {/* <GridLoader size={100} color="#000" margin="10px" /> */}
                 </LoaderContainer>
 			)}
 		</StyledShoeGrid>
