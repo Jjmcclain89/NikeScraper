@@ -7,7 +7,12 @@ import Shoe from './Shoe';
 const StyledShoeGrid = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-gap: 1rem;
+	grid-gap: 1.1rem;
+`;
+
+const LoaderContainer = styled.div`
+    display:block;
+	align-items: center;
 `;
 
 const Data = () => {
@@ -18,7 +23,9 @@ const Data = () => {
 			{shoeData.length > 0 ? (
 				shoeData.map(shoe => <Shoe key={shoe.id} shoeInfo={shoe} />)
 			) : (
-				<GridLoader size="100" color="#000" margin="10px" />
+                <LoaderContainer>
+                    <GridLoader size={100} color="#000" margin="10px" />
+                </LoaderContainer>
 			)}
 		</StyledShoeGrid>
 	);

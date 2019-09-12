@@ -17,26 +17,26 @@ const StyledPage = styled.div`
 	color: ${props => props.theme.black};
 `;
 
-// const GlobalStyle = createGlobalStyle`
-//   html {
-//     background: ${theme.offWhite};
-//     box-sizing: border-box;
-//     font-size: 16px;
-//   }
-//   *, *:before, *:after {
-//     box-sizing: inherit;
-//   }
-//   body {
-//     padding: 0;
-//     margin: 0;
-//     font-size: 1rem;
-//     line-height: 2;
-//   }
-//   a {
-//     text-decoration: none;
-//     color: ${theme.black};
-//   }
-// `;
+const GlobalStyle = createGlobalStyle`
+  html {
+    background: ${theme.offWhite};
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 2;
+  }
+  a {
+    text-decoration: none;
+    color: ${theme.black};
+  }
+`;
 
 const useShoes = () => {
 	const [shoes, setShoes] = useState([]);
@@ -56,7 +56,7 @@ const Page = ({ children }) => {
 	const shoes = useShoes();
 	return (
 		<>
-			{/* <GlobalStyle /> */}
+			<GlobalStyle />
 			<ShoeProvider value={shoes}>
 				<StyledPage>{children}</StyledPage>
 			</ShoeProvider>

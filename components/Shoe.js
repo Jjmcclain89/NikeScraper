@@ -13,13 +13,13 @@ const StyledTitle = styled.a`
 	font-weight: bold;
 	text-align: center;
 	color: blue;
-    z-index: 1;
+	z-index: 1;
 `;
 
 const StyledSubTitle = styled.h3`
 	font-size: 1rem;
 	text-align: center;
-    z-index: 1;
+	z-index: 1;
 `;
 
 const StyledImage = styled.img`
@@ -27,7 +27,7 @@ const StyledImage = styled.img`
 	margin: auto;
 	/* margin-top: -5rem; */
 	margin-bottom: -5rem;
-    z-index: -1;
+	z-index: -1;
 `;
 
 const StyledItemInfoContainer = styled.div`
@@ -40,8 +40,8 @@ const StyledText = styled.p`
 `;
 
 const Shoe = ({ shoeInfo }) => {
-	const {
-		title,
+    const {
+        title,
 		subtitle,
 		img,
 		link,
@@ -49,9 +49,13 @@ const Shoe = ({ shoeInfo }) => {
 		currentPrice,
 		totalDiscount
 	} = shoeInfo;
+    
+    const handleClick = e => {
+        window.location = link;
+    }
 	return (
-		<>
-			<StyledShoe>
+        <>
+			<StyledShoe onClick={handleClick}>
 				<StyledTitle href={link}>{title}</StyledTitle>
 				{/* <StyledSubTitle>{subtitle}</StyledSubTitle> */}
 				<StyledImage src={img}></StyledImage>
