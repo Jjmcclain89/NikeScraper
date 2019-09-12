@@ -6,8 +6,15 @@ import Shoe from './Shoe';
 
 const StyledShoeGrid = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr;
 	grid-gap: 1.1rem;
+
+    @media(min-width: 750px){
+        grid-template-columns: 1fr 1fr;
+    }
+    @media(min-width: 1250px){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 `;
 
 const LoaderContainer = styled.div`

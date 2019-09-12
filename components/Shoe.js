@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { formatPrice } from '../lib/lib';
 
 const StyledShoe = styled.div`
 	background: white;
@@ -25,45 +26,43 @@ const StyledSubTitle = styled.h3`
 const StyledImage = styled.img`
 	display: block;
 	margin: auto;
-	/* margin-top: -5rem; */
+	/* margin-top: -2.5rem; */
 	margin-bottom: -5rem;
 	z-index: -1;
 `;
 
-const StyledItemInfoContainer = styled.div`
-	text-align: center;
-`;
-
 const StyledText = styled.p`
-	margin: 0;
+	text-align: ${({ align }) => align};
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: ${({ align }) => (align == 'end' ? '.5rem' : '0')};
 	font-size: 1.5rem;
+	font-weight: bold;
+	span {
+		color: ${({ color }) => color};
+	}
 `;
 
 const Shoe = ({ shoeInfo }) => {
-    const {
-        title,
-		subtitle,
-		img,
-		link,
-		fullPrice,
-		currentPrice,
-		totalDiscount
-	} = shoeInfo;
-    
-    const handleClick = e => {
-        window.location = link;
-    }
+	const { title, img, link, fullPrice, currentPrice, totalDiscount } = shoeInfo;
+
+	const handleClick = e => {
+		window.location = link;
+	};
 	return (
-        <>
+		<>
 			<StyledShoe onClick={handleClick}>
 				<StyledTitle href={link}>{title}</StyledTitle>
-				{/* <StyledSubTitle>{subtitle}</StyledSubTitle> */}
+				<StyledText align="center" color="black">
+					Full Price: <span>{formatPrice(fullPrice)}</span>
+				</StyledText>
 				<StyledImage src={img}></StyledImage>
-				<StyledItemInfoContainer>
-					<StyledText>Full Price: {fullPrice} </StyledText>
-					<StyledText>Discounted Price: {currentPrice} </StyledText>
-					<StyledText>Total Discount: {totalDiscount} </StyledText>
-				</StyledItemInfoContainer>
+				<StyledText align="end" color="red">
+					Total Discount: <span>{formatPrice(totalDiscount)}</span>
+				</StyledText>
+				<StyledText align="end" color="green">
+					Discounted Price: <span>{formatPrice(currentPrice)}</span>
+				</StyledText>
 			</StyledShoe>
 		</>
 	);

@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { ShoeProvider } from './ShoeContext';
 import { getShoeData } from '../lib/lib.js';
+import Meta from './Meta'
+import Header from './Header'
 
 const theme = {
 	red: '#FF0000',
@@ -56,6 +58,8 @@ const Page = ({ children }) => {
 	const shoes = useShoes();
 	return (
 		<>
+            <Meta />
+            <Header />
 			<GlobalStyle />
 			<ShoeProvider value={shoes}>
 				<StyledPage>{children}</StyledPage>
