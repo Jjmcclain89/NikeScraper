@@ -1,7 +1,7 @@
 import Page from '../components/Page';
 import Data from '../components/Data';
 
-const home = () => {
+const App = () => {
 	return (
 		<Page>
             <Data />
@@ -9,4 +9,4 @@ const home = () => {
 	);
 };
 
-export default home;
+export default App;

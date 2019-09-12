@@ -1,18 +1,26 @@
 import { useContext } from 'react';
+import styled from 'styled-components';
+import GridLoader from '@bit/davidhu2000.react-spinners.grid-loader';
 import { ShoeContext } from './ShoeContext';
 import Shoe from './Shoe';
 
-const Data = props => {
-    const shoeData = useContext(ShoeContext);
-    console.log(shoeData);
+const StyledShoeGrid = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1rem;
+`;
+
+const Data = () => {
+	const shoeData = useContext(ShoeContext);
+	console.log(shoeData);
 	return (
-		<div>
-            {shoeData.map(shoe => {
-                return (
-                    <Shoe key={shoe.id} shoeInfo={shoe}/>
-                )
-            })}
-		</div>
+		<StyledShoeGrid>
+			{shoeData.length > 0 ? (
+				shoeData.map(shoe => <Shoe key={shoe.id} shoeInfo={shoe} />)
+			) : (
+				<GridLoader size="100" color="#000" margin="10px" />
+			)}
+		</StyledShoeGrid>
 	);
 };
 

@@ -14,8 +14,10 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@bit/davidhu2000.react-spinners.grid-loader": "^0.5.1",
 		"next": "^9.0.5",
 		"react": "^16.9.0",
-		"react-dom": "^16.9.0"
+		"react-dom": "^16.9.0",
+		"styled-components": "^4.3.2"
 	}
 }
