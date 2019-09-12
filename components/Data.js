@@ -24,6 +24,7 @@ const Data = () => {
 				shoeData.map(shoe => <Shoe key={shoe.id} shoeInfo={shoe} />)
 			) : (
                 <LoaderContainer>
+                    <h1>Getting the data from Nike</h1>
                     {/* <GridLoader size={100} color="#000" margin="10px" /> */}
                 </LoaderContainer>
 			)}
